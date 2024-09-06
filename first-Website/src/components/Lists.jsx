@@ -53,13 +53,16 @@ export const SeriesCards = (props) =>{
         <div>
           <img src={img_url} alt="abc.jpg" width= "30%" height="30%" />
 
-          <div className={styles['card-content']}>
+          {/* <div className={styles['card-content']}> */}
+
+          <div className="flex flex-col py:[ 3.2rem] px.[2rem]; gap-4">
+
 
          <h2>Name:{name}</h2>  {/*  Dynamic Value using value */}
          <Rating>Rating:<span className={`${styles.rating} ${ratingclass}`}>{rating}</span></Rating> {/*  Dynamic Value using expression */}
-         <p>{description}</p>  
-         <p>Genre:{genre}</p> {/*  Dynamic Value using function */}
-         <p>Cast:{cast}</p> {/*  Dynamic Value using function */}
+         <p className="text-3xl font-bold underline">{description}</p>  
+         <p>Genre:{genre.join(",")}</p> {/*  Dynamic Value using function */}
+         <p>Cast:{cast.join(",")}</p> {/*  Dynamic Value using function */}
          
           <a href={watch_url} target="_blank" >
           <ButtonRanjan rating= {rating}>Watch Now</ButtonRanjan>
